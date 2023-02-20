@@ -79,7 +79,7 @@
 <h4 id="Let’s-see-an-example"><a href="#Let’s-see-an-example" class="headerlink" title="Let’s see an example"></a>Let’s see an example</h4><p>Suppose we are given the following sequence, can you identify the longest increasing subsequence? Note that the sequence order is increasing from the top down (as in an Excel sheet).</p>
 <br/>
 
-<img src="/blogging/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/lis.png"  alt="lis_example" width="100%">
+<img src="https://polygonart6777.github.io/blogging/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/lis.png"  alt="lis_example" width="100%">
 
 <br/>
 <br/>
@@ -109,14 +109,14 @@
 <br/>
 
 <p>You are watching a Mario Kart match with a friend and suppose the following shows the result of a very competitive Mario Kart match between some of the influential scientists of our time. We notice that Ada Yonath, a nobel laureate crystallographer is in top place in the first round!<br></br></p>
-<img src="https://polygonart6777.github.io/blogging/2023/02/17/blogging/Longest-Increasing-Subsequence-and-its-application-at-Delving/computational_influencers_v1.png"  alt="computational_influencers_round_1" width="100%">
+<img src="https://polygonart6777.github.io/blogging/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/computational_influencers_v1.png"  alt="computational_influencers_round_1" width="100%">
 
 <br/>
 <br/>
 
 <p>Unfortunately, your friend has to skedaddle and will miss the second round. They sure does miss a wild second round. Emmy Noether, a mathematician, jumps into first place. Must be those excellent mathematical abilities!</p>
 </br>
-<img src="https://polygonart6777.github.io/blogging/2023/02/17/blogging/Longest-Increasing-Subsequence-and-its-application-at-Delving/computational_influencers_v2.png"  alt="computational_influencers_round_2" width="100%">
+<img src="https://polygonart6777.github.io/blogging/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/computational_influencers_v2.png"  alt="computational_influencers_round_2" width="100%">
 
 <br/>
 <br/>
@@ -162,7 +162,8 @@ proof proof proof
 <br/>
 
 <h3 id="How-does-LCS-relate-to-row-moves-algorithm-at-Delving"><a href="#How-does-LCS-relate-to-row-moves-algorithm-at-Delving" class="headerlink" title="How does LCS relate to row moves algorithm at Delving?"></a>How does LCS relate to row moves algorithm at Delving?</h3><p>For the sake of simplicity, we can represent each Excel row as a character within a sequence, then the problem becomes identifying the minimum number of row actions to change one Excel sheet into the other. Since Longest Common Subsequence distance only uses the actions of insertion and deletion, this makes it a desirable metric to use on Excel changesets. Further the row moves we have described, can be interpreted as an insertion and a deletion of the same row. This means that minimizing the number of insertions and deletions also minimizes the number of excel row insertions, deletions and moves.</p>
-<p><code>edit distance for excel rows = rows(v_1) + rows(v_2) - 2len(lcs) - number of insertion and deletions of a matching row</code></p>
+<!-- `edit distance for excel rows = rows(v_1) + rows(v_2) - 2len(lcs) - number of insertion and deletions of a matching row` -->
+
 </br>
 
 <h3 id="Is-it-really-the-minimum-number-of-moves"><a href="#Is-it-really-the-minimum-number-of-moves" class="headerlink" title="Is it really the minimum number of moves?"></a>Is it really the minimum number of moves?</h3></br>
