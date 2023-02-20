@@ -1,0 +1,232 @@
+<html>
+  <!-- Head tag -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="favicon/favicon.ico" />
+
+  <title>Blog Template for Bootstrap</title>
+
+  <!-- Bootstrap core CSS -->
+  
+<link rel="stylesheet" href="/blogging/bootstrap/css/bootstrap.min.css">
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  
+<link rel="stylesheet" href="/blogging/css/ie10-viewport-bug-workaround.css">
+
+
+  <!-- Custom styles for this template -->
+  
+<link rel="stylesheet" href="/blogging/css/blog.css">
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  <body>
+    <div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      
+      <a class="blog-nav-item" href="/blogging/">Home</a>
+      
+      <a class="blog-nav-item" href="/blogging/archives">Archives</a>
+      
+    </nav>
+  </div>
+</div>
+
+    <div class="container">
+      <!-- Blog Header: title and subtitle -->
+      <div class="blog-header">
+  <h1 class="blog-title">Reverie</h1>
+  <p class="lead blog-description"></p>
+</div>
+
+
+      <div class="row">
+        <!-- Main Content -->
+        <div class="col-sm-8 blog-main"><span>Posts</span>
+
+ <div class="blog-post">
+  <!-- Title -->
+  <h2 class="blog-post-title">
+    <a href="/blogging/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/"> Longest Increasing Subsequence and its application at Delving </a>
+  </h2>
+
+  <!-- Date and Author -->
+  <p class="blog-post-meta">
+    2023-02-17 
+  </p>
+
+  <!-- Content -->
+  <p>One of the classical and ubiquitous eamples in dynamic programming is the problem of finding a longest increasing subsequence or its relative the longest common subsequnce. The first time I encountered this algorithm was while studying for technical interviews and getting the infamouse, your recursive algorithm is too slow response, a hint to use the power of memoization i.e dynamic programming. There are so many times when I’ve felt that these interview problems won’t ever show up within the actual role, but interestingly enough this one had a direct application at Delving! Let me tell you about it.</p>
+<!-- ![Computational Influencers](computational_influencers_v1.png) -->
+
+<br/>
+
+<h3 id="The-Longest-Increasing-Subsequence-problem"><a href="#The-Longest-Increasing-Subsequence-problem" class="headerlink" title="The Longest Increasing Subsequence problem"></a>The Longest Increasing Subsequence problem</h3><p><em>Given a sequence, find the longest subsequence such that that elements are in strictly increasing order.</em><br>Note that we want a subsequence and not a substring, so we’re allowed to drop any elements of the original string to create the subsequence.</p>
+<br/>
+
+<h4 id="Let’s-see-an-example"><a href="#Let’s-see-an-example" class="headerlink" title="Let’s see an example"></a>Let’s see an example</h4><p>Suppose we are given the following sequence, can you identify the longest increasing subsequence? Note that the sequence order is increasing from the top down (as in an Excel sheet).</p>
+<br/>
+
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/lis.png"  alt="lis_example" width="100%">
+
+<br/>
+<br/>
+
+<p>In this example the longest increasing susbsequence is ABCDFHIJ.</p>
+<p>The rigourous way to do this would be to consider an increasing subsequence starting at each node and then identify the longest such subsequence. If you’re wondering about the algorithm, I’ll talk about it in just a few paragraphs, but first, I would like to introduce Delving and the problem we were facing. For now, one way to visually solve this is to imagine each letter representing its number in the alphabet and then scan the bar graph for increasing blocks, making sure to only take the next letter if its bar is longer than the previous bar. Then, taking the longest such subsequence.</p>
+</br>
+
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/lis_solution.png"  alt="lis_solution" width="100%">
+  
+<br/>
+<br/>
+
+<h3 id="What-is-Delving"><a href="#What-is-Delving" class="headerlink" title="What is Delving?"></a>What is Delving?</h3><p>Delving is a startup whose mission is to improve the workflow for Excel users. At the core, is a version control system where a user is able to see the changes from one Excel file to another. In particular, a change report shows cell level changes and also row level changes.</p>
+</br>
+
+<h3 id="Row-moves-algorithm"><a href="#Row-moves-algorithm" class="headerlink" title="Row moves algorithm"></a>Row moves algorithm</h3><p>In Excel, the columns and rows play an important role. Someone who is looking to change one excel sheet to another has a few common actions to perform. They can clear, add, or change the contents within cells. One level up, they can delete, insert, or move a row or column. For convenience, let’s focus on rows only. A deleted row occurs when a row is present in the first file but no matching row is found in the second excel file. An inserted row is a one that is present in the second excel file but there is no matching row in the first excel file. A moved row (or rearranged row) is a row that is present in both files but its index has changed from the first to the second version. Note: Since we also show cell level changes, a moved row may be a fuzzy matching of a row instead of an exact match.</p>
+</br>
+
+<h3 id="Example-in-Delving"><a href="#Example-in-Delving" class="headerlink" title="Example in Delving"></a>Example in Delving</h3></br>
+
+<p align="center">
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/mario_kart.png"  alt="mario_kart" width="50%">
+</p">
+
+<br/>
+<br/>
+
+<p>You are watching a Mario Kart match with a friend and suppose the following shows the result of a very competitive Mario Kart match between some of the influential scientists of our time. We notice that Ada Yonath, a nobel laureate crystallographer is in top place in the first round!<br></br></p>
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/computational_influencers_v1.png"  alt="computational_influencers_round_1" width="100%">
+
+<br/>
+<br/>
+
+<p>Unfortunately, your friend has to skedaddle and will miss the second round. They sure does miss a wild second round. Emmy Noether, a mathematician, jumps into first place. Must be those excellent mathematical abilities!</p>
+</br>
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/computational_influencers_v2.png"  alt="computational_influencers_round_2" width="100%">
+
+<br/>
+<br/>
+
+<p>Your friend messages you and wants to know what all happened! You know they already have information about the first round and so you can relate what happend in the second round to the first. You can talk about how Emmy won, you can also mention that Ada went down one rank. Well, so did a few other of the players. You can also talk about how some of the players stayed in the same rank, such as the nuclear physicist, Homi J Bhabha. But all of that is pretty verbose. What is a simple way to describe the situation so that your friend knows everyone’s rankings?</p>
+</br>
+
+<h3 id="Delving-to-the-rescue"><a href="#Delving-to-the-rescue" class="headerlink" title="Delving to the rescue"></a>Delving to the rescue</h3><p>You pop both excel sheets into Delving to see how to describe the changes in the simplest way using row moves.</p>
+</br>
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/delving_diff.png"  alt="Delving_diff" width="100%">
+
+</br>
+</br>
+
+<p>As indicated by the blue outline, we can simply say that two major things happened; Emmy moved from fifth to first place and Galileo moved down from seventh to eigth place. Note: that the header row means that the index value shown on the left are one more than the rank value.</p>
+<p>From here, we can reconstruct the rest of the rankings because if Emmy moved into first place then everyone above Emmy moved down a rank. If Galileo moved down a rank from seventh to eight place then whoever was below Galileo, namely Homi, now moves up a rank. Everyone who was neither above Emmy or directly below Galielo were not effected and kept their same ranking in both rounds. This is also apparent because the cell in the Rank column is unchanged for those folks.</p>
+<p>Now the question is, how does Delving do it?</p>
+</br>
+
+<h3 id="The-Excel-row-move-problem"><a href="#The-Excel-row-move-problem" class="headerlink" title="The Excel row move problem"></a>The Excel row move problem</h3><p>At Delving, our problem was to describe the row changes from the first spreadsheet to the second in the simplest way, meaning the smallest number of individual row actions (delete, insert, move). Let’s assume that each row action has the same cost. Many version control systems have this problem and defining an Edit distance is often the solution.</p>
+</br>
+
+<h3 id="Edit-distance"><a href="#Edit-distance" class="headerlink" title="Edit distance"></a>Edit distance</h3><p>In computational linguistics, the edit distance is a metric used to identify the similarity between two strings. There are many different types of edit distance where different types of actions are performed, insertion, deletion, substitution, transposition etc. The history…</p>
+<p>The edit distance is the minimum number of insertions and deletions to change one string to another. It is actually related to the longest common subsequence by the following formula. If we let <code>s_1</code> be the first string, <code>s_2</code> be the second string and <code>lcs</code> be the longest common subsequence then:</p>
+<p><code>edit distance = len(s_1) + len(s_2) - 2len(lcs)</code></p>
+<details>
+<summary>
+
+<p>For proof of the formula, click this text</p>
+</summary>
+proof proof proof
+</details>
+
+</br>
+
+<h3 id="Longest-Common-Subsequence"><a href="#Longest-Common-Subsequence" class="headerlink" title="Longest Common Subsequence"></a>Longest Common Subsequence</h3><p><em>Given two sequences find the longest subsequence that is present in both sequences.</em></p>
+<p>In general, it is also a widely used metric in version control systems such as Git and Pijul!</p>
+<p>Let us create a sequence using the first letter of the names of our computational influencers for both round 1 and round 2. We can find the longest common subsequence, or we just find the longest increasing subsequence of round 2 where the ordering is alphabetical order as we did before!</p>
+</br>
+<img src="http://localhost:4000/2023/02/17/Longest-Increasing-Subsequence-and-its-application-at-Delving/lcs.png"  alt="Longest_common_subsequence" width="100%">
+
+<br/>
+<br/>
+
+<h3 id="How-does-LCS-relate-to-row-moves-algorithm-at-Delving"><a href="#How-does-LCS-relate-to-row-moves-algorithm-at-Delving" class="headerlink" title="How does LCS relate to row moves algorithm at Delving?"></a>How does LCS relate to row moves algorithm at Delving?</h3><p>For the sake of simplicity, we can represent each Excel row as a character within a sequence, then the problem becomes identifying the minimum number of row actions to change one Excel sheet into the other. Since Longest Common Subsequence distance only uses the actions of insertion and deletion, this makes it a desirable metric to use on Excel changesets. Further the row moves we have described, can be interpreted as an insertion and a deletion of the same row. This means that minimizing the number of insertions and deletions also minimizes the number of excel row insertions, deletions and moves.</p>
+<p><code>edit distance for excel rows = rows(v_1) + rows(v_2) - 2len(lcs) - number of insertion and deletions of a matching row</code></p>
+</br>
+
+<h3 id="Is-it-really-the-minimum-number-of-moves"><a href="#Is-it-really-the-minimum-number-of-moves" class="headerlink" title="Is it really the minimum number of moves?"></a>Is it really the minimum number of moves?</h3></br>
+
+<h3 id="The-code-for-LIS"><a href="#The-code-for-LIS" class="headerlink" title="The code for LIS"></a>The code for LIS</h3><p>Draw a Dag and a matrix representation of the DAG! May be helpful.</p>
+</br>
+
+<h3 id="Looking-ahead"><a href="#Looking-ahead" class="headerlink" title="Looking ahead"></a>Looking ahead</h3><p>It would be nice to show blocks that have been inserted, deleted or moved instead of individual rows.</p>
+
+
+  <!-- Only display the Read More link if we are displaying an excerpt -->
+  
+</div>
+
+ <nav>
+  <ul class="pager">
+     
+  </ul>
+</nav>
+
+</div>
+
+        <!-- Sidebar -->
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar"><div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>
+    My name is Dina Buric and I'm a mathematician turned software developer. Combining math, art,
+    and technology makes me happy. I typically match the technology to the project instead of the
+    other way around. Tinkering is my favorite pastime.
+  </p>
+</div>
+<!-- <div class="sidebar-module">
+  <h4>Archives</h4>
+  <ol class="list-unstyled">
+    <li><a href="#">March 2014</a></li>
+    <li><a href="#">February 2014</a></li>
+    <li><a href="#">January 2014</a></li>
+    <li><a href="#">December 2013</a></li>
+    <li><a href="#">November 2013</a></li>
+  </ol>
+</div> -->
+<div class="sidebar-module">
+  <h4>Elsewhere</h4>
+  <ol class="list-unstyled">
+    <li><a href="#">GitHub</a></li>
+    <li><a target="_blank" rel="noopener" href="https://www.dina-buric.com">Website</a></li>
+  </ol>
+</div>
+</div>
+      </div>
+    </div>
+    <!-- After footer scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+<script src="/blogging/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+<script src="/blogging/js/ie10-viewport-bug-workaround.js"></script>
+
+
+  </body>
+</html>
